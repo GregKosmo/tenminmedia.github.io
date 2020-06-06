@@ -1,7 +1,8 @@
 class Tweet {
     tweetText;
     episodeTitle;
-    mediaUrl;
+    photoUrl;
+    videoUrl;
     tweetUrl;
     episodeUrl;
     episode;
@@ -25,27 +26,45 @@ function setTweets(tweets) {
         profilePictureContainer.classList.add('profilePicture');
         profilePictureContainer.src = 'images/Profile_Picture.jpg';
 
+        let mediaPreviewContainer;
+        if(tweet.photoUrl !== undefined) {
+            mediaPreviewContainer = document.createElement('img');
+            mediaPreviewContainer.classList.add('mediaPreview');
+            mediaPreviewContainer.setAttribute('loading', 'lazy');
+            mediaPreviewContainer.src = tweet.photoUrl;
+        }
+
+        if(tweet.videoUrl !== undefined) {
+            let videoSource = document.createElement('source');
+            videoSource.src = tweet.videoUrl;
+            videoSource.type = 'video/mp4';
+
+            mediaPreviewContainer = document.createElement('video');
+            mediaPreviewContainer.classList.add('mediaPreview');
+            mediaPreviewContainer.setAttribute('controls', true);
+            mediaPreviewContainer.setAttribute('loop', true);
+            mediaPreviewContainer.appendChild(videoSource);
+        }
+
         let nameContainer = document.createElement('span');
         nameContainer.classList.add('name');
         nameContainer.innerText = 'Ten Minute Podcast';
 
         let handleContainer = document.createElement('span');
         handleContainer.classList.add('handle')
-        handleContainer.innerText = '@TenMinPod';
+        handleContainer.innerHTML = '<a href="twitter.com/TenMinPod">@TenMinPod</a>';
 
         let dateContainer = document.createElement('span');
         dateContainer.classList.add('date');
         dateContainer.innerText = tweet.date.toLocaleDateString();
 
-        let photoUrlContainer = document.createElement('a');
-        photoUrlContainer.classList.add('photoUrl');
-        photoUrlContainer.href = tweet.mediaUrl;
-        photoUrlContainer.innerText = `pic.twitter.com/${btoa(Math.floor(Math.random() * 1000000))}`;
-
         let textContainer = document.createElement('span');
         textContainer.classList.add('text');
-        textContainer.innerText = `${tweet.tweetText} `;
-        textContainer.appendChild(photoUrlContainer);
+        textContainer.innerHTML = `${tweet.tweetText.replace(/@\w+/g, handle => {
+            return `<a href="https://twitter.com/${handle.replace('@', '')}">${handle}</a>`
+        }).replace(/#\w+/g, hashtag => {
+            return `<a href="https://twitter.com/hashtag/${hashtag.replace('#', '')}">${hashtag}</a>`
+        })} `;
 
         let leftSection = document.createElement('span');
         leftSection.classList.add('leftSection');
@@ -57,13 +76,18 @@ function setTweets(tweets) {
         topSection.appendChild(handleContainer);
         topSection.appendChild(dateContainer);
 
-        let bottomSection = document.createElement('div');
+        let middleSection = document.createElement('div');
+        middleSection.classList.add('middleSection');
+        middleSection.appendChild(textContainer);
+
+        let bottomSection = document.createElement('dib');
         bottomSection.classList.add('bottomSection');
-        bottomSection.appendChild(textContainer);
+        bottomSection.appendChild(mediaPreviewContainer);
 
         let rightSection = document.createElement('span');
         rightSection.classList.add('rightSection');
         rightSection.appendChild(topSection);
+        rightSection.appendChild(middleSection);
         rightSection.appendChild(bottomSection);
 
         let tweetContainer = document.createElement('div');
@@ -90,7 +114,7 @@ var onLoad = () => {
             episode: 3,
             episodeTitle: `Disguise Hat`,
             episodeUrl: ``,
-            mediaUrl: `images/Chris_Disguise.jpg`,
+            photoUrl: `images/Chris_Disguise.jpg`,
             tweetText: `Here's the "disguise" Chris talked about on today's #TenMinutePodcast.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/172544945608073217?s=20`
         },
@@ -99,7 +123,7 @@ var onLoad = () => {
             episode: 10,
             episodeTitle: `So British`,
             episodeUrl: ``,
-            mediaUrl: `images/Chris_Wait_Tweet.jpg`,
+            photoUrl: `images/Chris_Wait_Tweet.jpg`,
             tweetText: `Today's ep uploaded late to iTunes bit.ly/wRHxIT so @chrisdelia had to wait to tweet and got mad at @WillSasso.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/177937759091171328?s=20`
         },
@@ -108,7 +132,7 @@ var onLoad = () => {
             episode: 33,
             episodeTitle: `Dickinround`,
             episodeUrl: ``,
-            mediaUrl: `images/New_Website_Art.jpg`,
+            photoUrl: `images/New_Website_Art.jpg`,
             tweetText: `After yesterday's show, we're thinking of changing our webiste art. Thanks to listener @PoppaYacht for the inspiration`,
             tweetUrl: `https://twitter.com/TenMinPod/status/210539914947858432?s=20`
         },
@@ -117,7 +141,7 @@ var onLoad = () => {
             episode: 24,
             episodeTitle: `Dumb as S**t Sauce`,
             episodeUrl: ``,
-            mediaUrl: `images/Will_Sasso_Dumb_As_Shit_Tattoo.jpg`,
+            photoUrl: `images/Will_Sasso_Dumb_As_Shit_Tattoo.jpg`,
             tweetText: `Thanks @binoytan for this fantastic rendering of the tattoo @WillSasso described in the "Dumb as Shit Sauce" episode`,
             tweetUrl: `https://twitter.com/TenMinPod/status/218160664336801793?s=20`
         },
@@ -126,7 +150,7 @@ var onLoad = () => {
             episode: 32,
             episodeTitle: `All About Bryan`,
             episodeUrl: ``,
-            mediaUrl: `images/Doin_Stuff_Doin_Stuff_Like_Real_Shit_In_Hollywood.jpg`,
+            photoUrl: `images/Doin_Stuff_Doin_Stuff_Like_Real_Shit_In_Hollywood.jpg`,
             tweetText: `Thanks @ChrisHoldenDev for this book cover concept from the "All About Bryan" episode.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/221331172712648705?s=20`
         },
@@ -135,7 +159,7 @@ var onLoad = () => {
             episode: 28,
             episodeTitle: `Last Words`,
             episodeUrl: ``,
-            mediaUrl: `images/Bryan_Callen_I_Did_It_All.jpg`,
+            photoUrl: `images/Bryan_Callen_I_Did_It_All.jpg`,
             tweetText: `Thanks @binoytan for another amazing piece! @bryancallens's "I DID IT AAAAALLLLL!!!" from the "Last Words" episode.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/224292611203137536?s=20`
         },
@@ -144,7 +168,7 @@ var onLoad = () => {
             episode: 39,
             episodeTitle: `In Twenty Years`,
             episodeUrl: ``,
-            mediaUrl: `images/Bit_Killer_Jaws.jpg`,
+            photoUrl: `images/Bit_Killer_Jaws.jpg`,
             tweetText: `Thanks @_atoro for this movie poster version of @bryancallen's nickname, revealed in the "In Twenty Years" episode.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/224293044902572032?s=20`
         },
@@ -153,7 +177,7 @@ var onLoad = () => {
             episode: 5,
             episodeTitle: `Wrestling and Farts`,
             episodeUrl: ``,
-            mediaUrl: `images/Blue_Streak.jpg`,
+            photoUrl: `images/Blue_Streak.jpg`,
             tweetText: `Thanks @Yoshicat77 for this blue streak movie poster featuring @chrisdelia. Funny reviews at the bottom! Haha ha hehe!`,
             tweetUrl: `https://twitter.com/TenMinPod/status/265529091363577856?s=20`
         },
@@ -162,7 +186,7 @@ var onLoad = () => {
             episode: 75,
             episodeTitle: `Dough Goats`,
             episodeUrl: ``,
-            mediaUrl: `images/Dough_Goat_Drawing.jpg`,
+            photoUrl: `images/Dough_Goat_Drawing.jpg`,
             tweetText: `Thanks @Gnarly_Chavi for sketching @bryancallen and a dough goat. Nice dough goat, dude!`,
             tweetUrl: `https://twitter.com/TenMinPod/status/266243498129367040?s=20`
         },
@@ -171,7 +195,7 @@ var onLoad = () => {
             episode: 75,
             episodeTitle: `Dough Goats`,
             episodeUrl: ``,
-            mediaUrl: `images/Ten_Minute_Dough_Goats.jpg`,
+            photoUrl: `images/Ten_Minute_Dough_Goats.jpg`,
             tweetText: `Thanks @BenjiArney for this pic of @chrisdelia and @WillSasso couple one two dough goats that they are.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/266254358281338880?s=20`
         },
@@ -180,7 +204,7 @@ var onLoad = () => {
             episode: 75,
             episodeTitle: `Dough Goats`,
             episodeUrl: ``,
-            mediaUrl: `images/Ten_Minute_Dough_Goats_2.jpg`,
+            photoUrl: `images/Ten_Minute_Dough_Goats_2.jpg`,
             tweetText: `Thanks @VaheKevork for this very creepy pic of a couple one two three dough goats.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/267023208044191745?s=20`
         },
@@ -189,7 +213,7 @@ var onLoad = () => {
             episode: 77,
             episodeTitle: `Bit Killer Jones`,
             episodeUrl: ``,
-            mediaUrl: `images/Bryan_Gothem_Show_Times.jpg`,
+            photoUrl: `images/Bryan_Gothem_Show_Times.jpg`,
             tweetText: `Here's the pic @chrisdelia mentioned on today's episode of @bryancallen's upcoming dates at @GothamComedy`,
             tweetUrl: `https://twitter.com/TenMinPod/status/268429292248133632?s=20`
         },
@@ -198,7 +222,7 @@ var onLoad = () => {
             episode: 75,
             episodeTitle: `Dough Goats`,
             episodeUrl: ``,
-            mediaUrl: `images/Row_Dough_Goats.jpg`,
+            photoUrl: `images/Row_Dough_Goats.jpg`,
             tweetText: `Thanks @rpasillas for this fantastic pic of the guys as a couple one two three dough goats. Fuckin dough goats.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/272136132257525760?s=20`
         },
@@ -210,7 +234,7 @@ var onLoad = () => {
             episode: 100,
             episodeTitle: `100th Episode`,
             episodeUrl: ``,
-            mediaUrl: `images/Chris_Likes_Wills_Beverages.jpg`,
+            photoUrl: `images/Chris_Likes_Wills_Beverages.jpg`,
             tweetText: `If you heard yesterday's podcast, this exchange between @WillSasso and @chrisdelia makes sense.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/297524386854998016?s=20`
         },
@@ -219,7 +243,7 @@ var onLoad = () => {
             episode: 75,
             episodeTitle: `Dough Goats`,
             episodeUrl: ``,
-            mediaUrl: `images/Disturbing_Dough_Goats.jpg`,
+            photoUrl: `images/Disturbing_Dough_Goats.jpg`,
             tweetText: `Hey @AdamJPelletier the whole "doughgoat" thing is funny and all but this pic you made is REEEALLY super disturbing!`,
             tweetUrl: `https://twitter.com/TenMinPod/status/299038344615182336?s=20`
         },
@@ -229,7 +253,7 @@ var onLoad = () => {
             episode: 104,
             episodeTitle: `Bryan's Science World Body`,
             episodeUrl: ``,
-            mediaUrl: `images/Bryan_Callen_Science_World_Body.jpg`,
+            photoUrl: `images/Bryan_Callen_Science_World_Body.jpg`,
             tweetText: `@TenMinPod Is this @bryancallen science world body?`,
             tweetUrl: `https://twitter.com/Edtrevino32/status/301454370501951488?s=20`
         },
@@ -238,7 +262,7 @@ var onLoad = () => {
             episode: 55,
             episodeTitle: `Dolphin With a Handgun`,
             episodeUrl: ``,
-            mediaUrl: `images/Dolphin_With_A_Handgun.jpg`,
+            photoUrl: `images/Dolphin_With_A_Handgun.jpg`,
             tweetText: `Thanks @Kishwick for geeking up this Dolphin with a Handgun movie poster! The 1920s gangster theme is a cool choice.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/301583164835516416?s=20`
         },
@@ -248,7 +272,7 @@ var onLoad = () => {
             episode: 110,
             episodeTitle: `Shit in Shoes`,
             episodeUrl: ``,
-            mediaUrl: `videos/Shit_In_Shoes.mp4`,
+            videoUrl: `videos/Shit_In_Shoes.mp4`,
             tweetText: `Hey, check it out! We're recording! :D`,
             tweetUrl: `https://twitter.com/TenMinPod/status/306989736067756034?s=20`
         },
@@ -257,7 +281,7 @@ var onLoad = () => {
             episode: 109,
             episodeTitle: `I'm the busiest`,
             episodeUrl: ``,
-            mediaUrl: `images/Grown_Man_School_Boy_Full_Grown_Skater.jpg`,
+            photoUrl: `images/Grown_Man_School_Boy_Full_Grown_Skater.jpg`,
             tweetText: `Per today's episode, here's grown man schoolboy @bryancallen and fully adult skater @chrisdelia.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/307226096468901890?s=20`
         },
@@ -266,7 +290,7 @@ var onLoad = () => {
             episode: 116,
             episodeTitle: `Yeeeeeaaaahhh`,
             episodeUrl: ``,
-            mediaUrl: `images/Chris_Says_Yeah.jpg`,
+            photoUrl: `images/Chris_Says_Yeah.jpg`,
             tweetText: `Thanks @rpasillas for this vivid illustration of the point @chrisdelia made on today's show about Paul Giamatti`,
             tweetUrl: `https://twitter.com/TenMinPod/status/316670198558109696?s=20`
         },
@@ -276,7 +300,7 @@ var onLoad = () => {
             episode: 120,
             episodeTitle: `Off The Grid`,
             episodeUrl: ``,
-            mediaUrl: `images/Christian_Kings_Jagged_Rocks.jpg`,
+            photoUrl: `images/Christian_Kings_Jagged_Rocks.jpg`,
             tweetText: `Thanks @Simonodon19 for this portraiture of @bryancallen and @WillSasso casting @chrisdelia down to the jagged rock.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/321712325352644609?s=20`
         },
@@ -285,7 +309,7 @@ var onLoad = () => {
             episode: 122,
             episodeTitle: `Back-UHlone`,
             episodeUrl: ``,
-            mediaUrl: `images/Bryan_Pants_Off.jpg`,
+            photoUrl: `images/Bryan_Pants_Off.jpg`,
             tweetText: `Here's the picture the guys were talking about at the top of today's show. Congratulations ot everyone involved.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/324329831313571840?s=20`
         },
@@ -294,7 +318,7 @@ var onLoad = () => {
             episode: 123,
             episodeTitle: `Jacked and Yolked`,
             episodeUrl: ``,
-            mediaUrl: `images/Better_Than_Oblivion.jpg`,
+            photoUrl: `images/Better_Than_Oblivion.jpg`,
             tweetText: `Thanks @Ashleyash27 for this perfectly accurate review of last Thursday's podcast.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/326465559136964610?s=20`
         },
@@ -303,7 +327,7 @@ var onLoad = () => {
             episode: 126,
             episodeTitle: `Jealous Sz'Fuck`,
             episodeUrl: ``,
-            mediaUrl: `images/Arguing_Like_An_Asshole.jpg`,
+            photoUrl: `images/Arguing_Like_An_Asshole.jpg`,
             tweetText: `Here's a sampling of the shitty faces @bryancallen was making while arguing like an asshole on today's podcast.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/329323133154775041?s=20`
         },
@@ -312,16 +336,52 @@ var onLoad = () => {
             episode: 136,
             episodeTitle: `Hey Will Do Standup`,
             episodeUrl: ``,
-            mediaUrl: `images/Bryan_And_Bobby_Yell_At_Will.jpg`,
+            photoUrl: `images/Bryan_And_Bobby_Yell_At_Will.jpg`,
             tweetText: `Here's the pic(s) @WillSasso took of @bobbyleelive and @bryancallen yelling at him during today's podcast.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/341994255604133889?s=20`
         },
         {
+            date: new Date(`6/13/2013`),
+            episode: 138,
+            episodeTitle: `Sexually Transmitted D'Bees`,
+            episodeUrl: ``,
+            videoUrl: `videos/Ten_Minute_Bees.mp4`,
+            tweetText: `Hey, did you guys like Tuesday's podcast? Pretty good, huh? #cuntbees`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/345074747341676544?s=20`
+        },
+        {
+            date: new Date(`6/13/2013`),
+            episode: 139,
+            episodeTitle: `The Boys are Back in Town`,
+            episodeUrl: ``,
+            photoUrl: `images/Sunglasses_Inside.jpg`,
+            tweetText: `Here's @chrisdelia wearing sunglasses inside. Even though there's clearly no reason. And that's obvious. #cuntbees`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/345248067894771712?s=20`
+        },
+        {
+            date: new Date(`7/3/2013`),
+            episode: 137,
+            episodeTitle: `Everybody's Dad Invests His Money`,
+            episodeUrl: ``,
+            photoUrl: `images/Ten_Minute_Pie_Crust.jpg`,
+            tweetText: `Thanks @TheVEALCHOP for geeking up this pie crust featuring a rendering of Everybody's Dad by the brilliant @pants!`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/352528932404350976?s=20`
+        },
+        {
+            date: new Date(`7/16/2013`),
+            episode: 148,
+            episodeTitle: `Bryan Neeeeeds Fame`,
+            episodeUrl: ``,
+            photoUrl: `images/Five_Finger_Point.jpg`,
+            tweetText: `Here's @chrisdelia giving @bryancallen the "five finger point" and sincerely juss'tryn t'helpm.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/357222512150577152?s=20`
+        },
+        {
             date: new Date(``),
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -330,7 +390,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -339,7 +399,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -348,7 +408,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -357,7 +417,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -366,7 +426,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -375,7 +435,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -384,7 +444,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -393,7 +453,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -402,7 +462,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -411,7 +471,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -420,7 +480,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -429,7 +489,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -438,7 +498,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -447,7 +507,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -456,7 +516,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -465,7 +525,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -474,7 +534,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -483,7 +543,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -492,7 +552,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -501,7 +561,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -510,7 +570,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -519,7 +579,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -528,7 +588,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -537,7 +597,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -546,7 +606,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -555,7 +615,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -564,7 +624,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -573,7 +633,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -582,7 +642,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -591,7 +651,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -600,7 +660,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -609,7 +669,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -618,7 +678,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -627,7 +687,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -636,7 +696,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -645,7 +705,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -654,7 +714,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -663,7 +723,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -672,7 +732,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },
@@ -681,43 +741,7 @@ var onLoad = () => {
             episode: 0,
             episodeTitle: ``,
             episodeUrl: ``,
-            mediaUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            mediaUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            mediaUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            mediaUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            mediaUrl: ``,
+            photoUrl: ``,
             tweetText: ``,
             tweetUrl: ``
         },

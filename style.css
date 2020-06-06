@@ -39,7 +39,8 @@ body {
 }
 
 .tweet .profilePicture {
-    max-width: 56px;
+    width: 56px;
+    height: 56px;
     border-radius: 4px;
 }
 
@@ -48,9 +49,10 @@ body {
     padding-right: 8px;
 }
 
-.tweet .handle {
+.tweet .handle a {
     color: #c4c4c4;
     font-size: 12px;
+    text-decoration: none;
 }
 
 .tweet .date {
@@ -59,9 +61,27 @@ body {
     font-size: 12px;
 }
 
-.tweet .photoUrl {
+.tweet .text a {
     text-decoration: none;
-    color: #242424;
+    color: #1f7694;
+}
+
+.tweet img.mediaPreview {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 16px;
+    max-height: 256px;
+    object-fit: cover;
+}
+
+.tweet video.mediaPreview {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 16px;
+}
+
+.tweet video.mediaPreview:focus {
+    outline: none;
 }
 
 .header {
