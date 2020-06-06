@@ -61,11 +61,13 @@ function setTweets(tweets) {
 
         let textContainer = document.createElement('span');
         textContainer.classList.add('text');
-        textContainer.innerHTML = `${tweet.tweetText.replace(/@\w+/g, handle => {
-            return `<a href="https://twitter.com/${handle.replace('@', '')}">${handle}</a>`
+        textContainer.innerHTML = `${tweet.tweetText.replace(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, url => {
+            return `<a href="https://${url}">${url}</a>`;
+        }).replace(/@\w+/g, handle => {
+            return `<a href="https://twitter.com/${handle.replace('@', '')}">${handle}</a>`;
         }).replace(/#\w+/g, hashtag => {
-            return `<a href="https://twitter.com/hashtag/${hashtag.replace('#', '')}">${hashtag}</a>`
-        })} `;
+            return `<a href="https://twitter.com/hashtag/${hashtag.replace('#', '')}">${hashtag}</a>`;
+        })}`;
 
         let leftSection = document.createElement('span');
         leftSection.classList.add('leftSection');
@@ -649,122 +651,130 @@ var onLoad = () => {
             tweetText: `Thanks @Jake_Jenssen for this fun doodle of @WillSasso's "shoes" that angered @chrisdelia and @bryancallen. #andanger`,
             tweetUrl: `https://twitter.com/TenMinPod/status/459434009710166017?s=20`
         },
+        //It's cool... https://twitter.com/TenMinPod/status/461717098755268609?s=20
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/6/2014`),
+            episode: 232,
+            episodeTitle: `Willbot 10000`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Willbot_10000_Drawing.jpg`,
+            tweetText: `Thanks @mrchickenpotpie for this rendering of #Willbot10000! W'ppreciatecha! #HelloBreeann #BreeannCallen #Breeann`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/463862641140588544?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/9/2014`),
+            episode: 233,
+            episodeTitle: `Bryan Callen Theme Song`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Callen_Theme_Song.jpg`,
+            tweetText: `Thanks @danWorthington for transcribing @bryancallen's version of the Bryan Callen Theme Song (w/ @WillSasso bugle).`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/464858925766959104?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/13/2014`),
+            episode: 234,
+            episodeTitle: `Andrew Jackson Hair`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Andrew_Jackson_Hair.jpg`,
+            tweetText: `Here's @davidsullivan9 running his fingers through his #AndrewJacksonHair and @bryancallen shirtless for no reason.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/466324797610549248?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/14/2014`),
+            episode: 234,
+            episodeTitle: `Andrew Jackson Hair`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Ten_Minute_Andrew_Jackson.jpg`,
+            tweetText: `Thanks @Mnot_Scute for again updating our tenminutepodcast.com banner. Andrew Jackson needs more Patch Adams tho.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/466671757978378240?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/15/2014`),
+            episode: 235,
+            episodeTitle: `Kevin D'Elia`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Kevin_Delia.jpg`,
+            tweetText: `Hey @BrianKent69 w'ppreciatecha for this vividly accurate sketch of Kevin D'Elia. His dad and uncles love him s'much.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/467044983912951809?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`5/19/2014`),
+            episode: 234,
+            episodeTitle: `Andrew Jackson Hair`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Ten_Minute_Patch_Adams.jpg`,
+            tweetText: `Thanks @andrew_dyce for adding some Patch Adams to the Andrew Jackson on thsi updated tenminutepodcast.com banner.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/466671757978378240?s=20`
+        },
+        //Obsession with bees? https://twitter.com/TenMinPod/status/469325226329649152?s=20
+        //Congratulations on your bad ideas? https://twitter.com/TenMinPod/status/469633660203716610?s=20
+        {
+            date: new Date(`5/28/2014`),
+            episode: 206,
+            episodeTitle: `Bryan's Stupid New Phone`,
+            episodeUrl: ``,
+            photoUrl: `images/How_Do_You_Listen_To_Podcasts.jpg`,
+            tweetText: `Thanks @mixn for adding Bryan's VHS tape "phone" to our listener survey. Helpful. podsurvey.com/tenminute #megapickles`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/471758321225969664?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`6/5/2014`),
+            episode: 241,
+            episodeTitle: `Bryan's Shitty Contest`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryans_Shitty_Contest.jpg`,
+            tweetText: `Hey @BrianKent69 w'ppreciatecha for this sketch of exactly what @bryancallen thinks his shitty contest would entail.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/474702082562220032?s=20`
+        },
+        //Dolphin with a handgun? https://twitter.com/TenMinPod/status/476096491929346049?s=20
+        {
+            date: new Date(`6/13/2014`),
+            episode: 55,
+            episodeTitle: `Dolphin With a Handgun`,
+            episodeUrl: ``,
+            photoUrl: `images/Dolphin_With_A_Handgun_Stills.jpg`,
+            tweetText: `WATCH @StingingFoam's DOLPHIN WITH A HANDGUN: youtu.be/wkPNE94s-Uk AND LOOK AT THESE STILLS FROM THAT THING ALSO:`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/477550263578804225?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`6/26/2014`),
+            episode: 247,
+            episodeTitle: `Slow Chewin' and Pillow Turnin'`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Stork_And_Muscles.jpg`,
+            tweetText: `If you haven't seen this youtu.be/wkPNE94s-Uk yet, watch it. And here are @StingingFoam's stork/muscle redesigns.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/482233560997171200?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`7/2/2014`),
+            episode: 248,
+            episodeTitle: `Heart And Eyes`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Heart_And_Eyes_Track_List.jpg`,
+            tweetText: `Thanks @mrchickenpotpie for this brilliant "Heart and Eyes" cover art and track list. #heartandeyes #beatandsee`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/482233560997171200?s=20`
         },
+        //Slow farts? https://twitter.com/TenMinPod/status/487447736271122433?s=20, https://twitter.com/TenMinPod/status/487457642877448192?s=20
+        //Fart compilation? https://twitter.com/TenMinPod/status/487804591233171457?s=20
+        //Gamefly compilation? https://twitter.com/TenMinPod/status/489454713331396609?s=20
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`7/18/2014`),
+            episode: 252,
+            episodeTitle: `DADADA BABABOO`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Ba_Ba_Boo.jpg`,
+            tweetText: `Thanks @JustinPruden for helping display that @bryancallen says #BABABOO when @WillSasso or anyone else says #DADADA.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/490245854087761920?s=20`
         },
+        //Bryan pooping? https://twitter.com/TenMinPod/status/491751405942607872?s=20
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`7/29/2014`),
+            episode: 256,
+            episodeTitle: `Bryan, Go For It`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Chris_Baby_Birding.jpg`,
+            tweetText: `Here's @chrisdelia "baby birding" @bryancallen for some Chipotle.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/494166261996482561?s=20`
         },
         {
             date: new Date(``),
