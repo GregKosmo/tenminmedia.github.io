@@ -776,59 +776,143 @@ var onLoad = () => {
             tweetText: `Here's @chrisdelia "baby birding" @bryancallen for some Chipotle.`,
             tweetUrl: `https://twitter.com/TenMinPod/status/494166261996482561?s=20`
         },
+        //Shuffler's physique https://twitter.com/TenMinPod/status/497881798961922048?s=20
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`8/27/2014`),
+            episode: 264,
+            episodeTitle: `Beyond the Stop`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Beyond_The_Stop.jpg`,
+            tweetText: `Thanks @WrimRimbaug for turning the tenminutepodcast.com banner into a brand-specific "Beyond the Stop" book cover!`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/504689880920621057?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/2/2014`),
+            episode: 266,
+            episodeTitle: `Chris's Conundrum`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Chris_Went_Missing.jpg`,
+            tweetText: `Thanks @ArronDennis for helping to find @chrisdelia who went missing but isn't missing and may have shit on his face.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/507024234124955648?s=20`
+        },
+        //Not Jujitsu? https://twitter.com/TenMinPod/status/509528073302454272?s=20
+        //Mustard sandwiches? https://twitter.com/TenMinPod/status/510228232054919168?s=20
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Bryans_Replacements_5.jpg`,
+            tweetText: `Thanks @amonkeyonacid for these perfectly executed versions of our website banner as described on today's podcast.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/511957493426057216?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Wills_Replacements_4.jpg`,
+            tweetText: `Thanks @amonkeyonacid for these perfectly executed versions of our website banner as described on today's podcast.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/511957493426057216?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Chris_Replacements_2.jpg`,
+            tweetText: `Thanks @amonkeyonacid for these perfectly executed versions of our website banner as described on today's podcast.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/511957493426057216?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryans_Replacements_2.jpg`,
+            tweetText: `Thanks also to @AverageGus @Systemik_ @Chrishowrad and @Marty20k for their weird as shit replacement photoshops.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512038301578952704?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryans_Replacements.jpg`,
+            tweetText: `Thanks also to @AverageGus @Systemik_ @Chrishowrad and @Marty20k for their weird as shit replacement photoshops.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512038301578952704?s=20`
+        },
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Wills_Replacements.jpg`,
+            tweetText: `Thanks also to @AverageGus @Systemik_ @Chrishowrad and @Marty20k for their weird as shit replacement photoshops.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512038301578952704?s=20`
+        },
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Replacement_Podcast.jpg`,
+            tweetText: `Thanks also to @AverageGus @Systemik_ @Chrishowrad and @Marty20k for their weird as shit replacement photoshops.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512038301578952704?s=20`
+        },
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Chris_Replacements_3.jpg`,
+            tweetText: `Thanks @DaliDimovski for your photoshops. The "Bill & Ted's" version should be a real movie (cc: @rickspringfield).`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512077861683875841?s=20`
+        },
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Wills_Replacements_2.jpg`,
+            tweetText: `Thanks @DaliDimovski for your photoshops. The "Bill & Ted's" version should be a real movie (cc: @rickspringfield).`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512077861683875841?s=20`
+        },
+        {
+            date: new Date(`9/16/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Bryans_Replacements_3.jpg`,
+            tweetText: `Thanks @DaliDimovski for your photoshops. The "Bill & Ted's" version should be a real movie (cc: @rickspringfield).`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512077861683875841?s=20`
+        },
+        {
+            date: new Date(`9/17/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Bryans_Replacements_4.jpg`,
+            tweetText: `And many more thanks to @mrchickenpotpie and @itdunmatta for your banner photoshops. W'ppreciatecha! #wppreciatecha`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512274140695248896?s=20`
+        },
+        {
+            date: new Date(`9/17/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Chris_Replacements.jpg`,
+            tweetText: `And many more thanks to @mrchickenpotpie and @itdunmatta for your banner photoshops. W'ppreciatecha! #wppreciatecha`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512274140695248896?s=20`
+        },
+        {
+            date: new Date(`9/17/2014`),
+            episode: 270,
+            episodeTitle: `Replacements`,
+            episodeUrl: ``,
+            photoUrl: `images/Wills_Replacements_3.jpg`,
+            tweetText: `And many more thanks to @mrchickenpotpie and @itdunmatta for your banner photoshops. W'ppreciatecha! #wppreciatecha`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/512274140695248896?s=20`
         },
         {
             date: new Date(``),
