@@ -915,67 +915,95 @@ var onLoad = () => {
             tweetUrl: `https://twitter.com/TenMinPod/status/512274140695248896?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/25/2014`),
+            episode: 273,
+            episodeTitle: `Bullet Points`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Comedy_T1000.jpg`,
+            tweetText: `Here's @bryancallen at which point he decided to wear sunglasses in today's podcast because he's "The Comedy T-1000."`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/515210750860591104?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/25/2014`),
+            episode: 273,
+            episodeTitle: `Bullet Points`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Comedy_T1000_Website.jpg`,
+            tweetText: `Thanks @jakelogann for this "screenshot" of @bryancallen's website bryancallenthecomedyt-1000.com! Check out those events!`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/515225055706349568?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`9/30/2014`),
+            episode: 274,
+            episodeTitle: `Brunch with the Guys`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            videoUrl: `videos/This_Is_Beautiful_Cheese.mp4`,
+            tweetText: `In lieu of another shirtless @bryancallen photo as referred to on today's podcast, please look at this instead.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/517029130173308929?s=20`
+        },
+        //Welcome? https://twitter.com/TenMinPod/status/521862589241106432?s=20
+        {
+            date: new Date(`10/20/2014`),
+            episode: 279,
+            episodeTitle: `Hit Based`,
+            episodeUrl: ``,
+            photoUrl: `images/Hit_Based_Definition.jpg`,
+            tweetText: `Thanks @TheMatterhorn9 for letting us know that "Hit Based" is on @urbandictionary even though that's so hit based.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524404809957253120?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`10/21/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Callen_Wolves_Bro.jpg`,
+            tweetText: `Thanks @Damonmaydesign @daledeforest @solppy_papi @catoalsen for all this bizarre shit.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524640859359563776?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`10/21/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Sinaid_Feat_Bryan_Callen.jpg`,
+            tweetText: `Thanks @Damonmaydesign @daledeforest @solppy_papi @catoalsen for all this bizarre shit.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524640859359563776?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`10/21/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Sinead_In_Las_Vegas.jpg`,
+            tweetText: `Thanks @Damonmaydesign @daledeforest @solppy_papi @catoalsen for all this bizarre shit.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524640859359563776?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`10/21/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Chris_Sleeping_With_Nicholas_Cage.jpg`,
+            tweetText: `Thanks @Damonmaydesign @daledeforest @solppy_papi @catoalsen for all this bizarre shit.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524640859359563776?s=20`
+        },
+        {
+            date: new Date(`10/21/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
+            episodeUrl: ``,
+            photoUrl: `images/Bryan_Callen_But_A_Man_Though.jpg`,
+            tweetText: `Hahaha! @PlumDunker's take on today's podcast gets an A+!`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/524682767821717505?s=20`
+        },
+        {
+            date: new Date(`10/22/2014`),
+            episode: 280,
+            episodeTitle: `Let's Shave Your Head`,
+            episodeUrl: ``,
+            photoUrl: `images/Leaving_Las_Vegas.jpg`,
+            tweetText: `Our listeners are the best! @NickLeadlay this is hilarous! BKJ'S THUMBS!! HAAA!!`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/525079247229300737?s=20`
         },
         {
             date: new Date(``),
