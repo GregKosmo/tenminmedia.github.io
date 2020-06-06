@@ -78,6 +78,7 @@ body {
     width: 100%;
     margin-top: 12px;
     border-radius: 16px;
+    z-index: 1;
 }
 
 .tweet video.mediaPreview:focus {
@@ -95,7 +96,7 @@ body {
     border-width: 0 0 1px 0;
     border-color: #2c6083;
     box-sizing: border-box;
-    z-index: 10000;
+    z-index: 3;
 }
 
 .footer {
@@ -109,5 +110,5 @@ body {
     border-width: 1px 0 0 0;
     border-color: 131313;
     box-sizing: border-box;
-    z-index: 10001;
+    z-index: 2;
 }
