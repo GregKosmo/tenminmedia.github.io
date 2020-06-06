@@ -1006,112 +1006,114 @@ var onLoad = () => {
             tweetUrl: `https://twitter.com/TenMinPod/status/525079247229300737?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`11/4/2014`),
+            episode: 285,
+            episodeTitle: `Setting Parameters`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            videoUrl: `videos/Producer_Logan_Bryans_Late.mp4`,
+            tweetText: `It's (always) great to see our producer, Logan. Also, Bryan is (always) late.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/529813512676454401?s=20`
+        },
+        //TODO: Is this one actually about the episode?
+        {
+            date: new Date(`11/8/2014`),
+            episode: 285,
+            episodeTitle: `Setting Parameters`,
+            episodeUrl: ``,
+            photoUrl: `images/Bryan_Is_Close.jpg`,
+            tweetText: `Thanks @Alex_Muns for diagramming how close @bryancallen was to @chrisdelia and @WillSasso as discussed on TMP LIVE.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/531191017496535040?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`11/11/2014`),
+            episode: 286,
+            episodeTitle: `Phones`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Phones.jpg`,
+            tweetText: `Yes @CNewmannMMA. Phones.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/532373227700383744?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`12/1/2014`),
+            episode: 295,
+            episodeTitle: `Most TMP TMP Ever`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            videoUrl: `videos/Mustache_Fart.mp4`,
+            tweetText: `BKJ's latest attempt to fart into the mic is thwarted by his own stupid jeans.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/539637480904220672?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`12/4/2014`),
+            episode: 293,
+            episodeTitle: `Brbr`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Bryan_Selfish_All_Finger_Pointing.jpg`,
+            tweetText: `Here's @bryancallen selfishly all-finger pointing at himself before @chrisdelia and @WillSasso explain brbr to him.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/540594170935533569?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`12/11/2014`),
+            episode: 295,
+            episodeTitle: `Most TMP TMP Ever`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Mustache_Jeans.jpg`,
+            tweetText: `#perfectlycleannikeshoes #yougivemethefingeragainillbreakitoffandstickitupyourass #1920scarnivalstrongmanjeans`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/543146238552449024?s=20`
+        },
+        //Bryan killed Will and Chris christmas card? https://twitter.com/TenMinPod/status/546438287930310656?s=20
+        {
+            date: new Date(`12/23/2014`),
+            episode: 298,
+            episodeTitle: `Christmas with Will's Adorable Italian Mother`,
+            episodeUrl: ``,
+            photoUrl: `images/Religious_Freedom.jpg`,
+            tweetText: `Thanks @CroweYo for this loving tribute to Will's Mom and her belief in family togetherness and religious autonomy.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/547548754614550528?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`12/30/2014`),
+            episode: 300,
+            episodeTitle: `300th Episode`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/On_My_2016_Shit.jpg`,
+            tweetText: `Thanks @justnic413 but don't encourage @chrisdelia to fuck with linear time. @WillSasso and @bryancallen hate that.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/550076717113810945?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`1/6/2015`),
+            episode: 302,
+            episodeTitle: `Take It Back`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Safe_Environment_For_Will.jpg`,
+            tweetText: `Here are @bryancallen and @chrisdelia creating a safe environment for @WillSasso to fire off that take it back.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/552522571477159936?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`1/6/2015`),
+            episode: 302,
+            episodeTitle: `Take It Back`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Stand_Up_Is_A_Dead_Art.jpg`,
+            tweetText: `Thanks @Grec530 for your summary of today's episode. #MandyPatinkin`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/552543023108591616?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`1/13/2015`),
+            episode: 304,
+            episodeTitle: `Give Us $2,000,000`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Chris_Making_The_Face_Will_Made.jpg`,
+            tweetText: `Here's @chrisdelia making the face @WillSasso spoke of on today's show, while @bryancallen and @CookMarshall look on.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/555043371169742848?s=20`
         },
         {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
+            date: new Date(`1/13/2015`),
+            episode: 304,
+            episodeTitle: `Give Us $2,000,000`,
             episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
-        },
-        {
-            date: new Date(``),
-            episode: 0,
-            episodeTitle: ``,
-            episodeUrl: ``,
-            photoUrl: ``,
-            tweetText: ``,
-            tweetUrl: ``
+            photoUrl: `images/Thats_Racist.jpg`,
+            tweetText: `Thanks for this @Nicklocono.`,
+            tweetUrl: `https://twitter.com/TenMinPod/status/555087967685836800?s=20`
         },
         {
             date: new Date(``),
