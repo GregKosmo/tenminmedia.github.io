@@ -1,0 +1,91 @@
+html {
+    background: #e2e2e2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #242424;
+}
+
+body {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.leftSection {
+    display: flex;
+}
+
+.rightSection {
+    padding-left: 12px;
+    width: 100%;
+}
+
+.tweetList {
+    background: white;
+    margin: 68px 12px;
+    border: 1px solid #bfbfbf;
+    border-radius: 6px;
+    box-shadow: 0 0 6px #bfbfbf;
+}
+
+.tweet:not(:last-child) {
+    border-style: solid;
+    border-color: #ebebeb;
+    border-width: 0 0 1px 0;
+}
+
+.tweet {
+    display: flex;
+    padding: 12px;
+}
+
+.tweet .profilePicture {
+    max-width: 56px;
+    border-radius: 4px;
+}
+
+.tweet .name {
+    font-weight: bold;
+    padding-right: 8px;
+}
+
+.tweet .handle {
+    color: #c4c4c4;
+    font-size: 12px;
+}
+
+.tweet .date {
+    color: #c4c4c4;
+    float: right;
+    font-size: 12px;
+}
+
+.tweet .photoUrl {
+    text-decoration: none;
+    color: #242424;
+}
+
+.header {
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg, #2c72a9 0%, #7baace 100%);
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #2c6083;
+    box-sizing: border-box;
+}
+
+.footer {
+    height: 56px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg, #141414 0%, #3d3d3d 100%);
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: 131313;
+    box-sizing: border-box;
+}
