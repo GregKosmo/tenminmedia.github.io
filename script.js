@@ -26,34 +26,13 @@ function setTweets(tweets) {
         profilePictureContainer.classList.add('profilePicture');
         profilePictureContainer.src = 'images/Profile_Picture.jpg';
 
-        let mediaPreviewContainer;
-        if(tweet.photoUrl !== undefined) {
-            //TODO: Surround image in button, focus styling remove height limit and transition to full.
-            mediaPreviewContainer = document.createElement('img');
-            mediaPreviewContainer.classList.add('mediaPreview');
-            mediaPreviewContainer.setAttribute('loading', 'lazy');
-            mediaPreviewContainer.src = tweet.photoUrl;
-        }
-
-        if(tweet.videoUrl !== undefined) {
-            let videoSource = document.createElement('source');
-            videoSource.src = tweet.videoUrl;
-            videoSource.type = 'video/mp4';
-
-            mediaPreviewContainer = document.createElement('video');
-            mediaPreviewContainer.classList.add('mediaPreview');
-            mediaPreviewContainer.setAttribute('controls', true);
-            mediaPreviewContainer.setAttribute('loop', true);
-            mediaPreviewContainer.appendChild(videoSource);
-        }
-
         let nameContainer = document.createElement('span');
         nameContainer.classList.add('name');
         nameContainer.innerText = 'Ten Minute Podcast';
 
         let handleContainer = document.createElement('span');
         handleContainer.classList.add('handle')
-        handleContainer.innerHTML = '<a href="twitter.com/TenMinPod">@TenMinPod</a>';
+        handleContainer.innerText = '@TenMinPod';
 
         let dateContainer = document.createElement('span');
         dateContainer.classList.add('date');
@@ -61,13 +40,7 @@ function setTweets(tweets) {
 
         let textContainer = document.createElement('span');
         textContainer.classList.add('text');
-        textContainer.innerHTML = `${tweet.tweetText.replace(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, url => {
-            return `<a href="https://${url}">${url}</a>`;
-        }).replace(/@\w+/g, handle => {
-            return `<a href="https://twitter.com/${handle.replace('@', '')}">${handle}</a>`;
-        }).replace(/#\w+/g, hashtag => {
-            return `<a href="https://twitter.com/hashtag/${hashtag.replace('#', '')}">${hashtag}</a>`;
-        })}`;
+        textContainer.innerText = tweet.tweetText;
 
         let leftSection = document.createElement('span');
         leftSection.classList.add('leftSection');
@@ -83,17 +56,12 @@ function setTweets(tweets) {
         middleSection.classList.add('middleSection');
         middleSection.appendChild(textContainer);
 
-        let bottomSection = document.createElement('dib');
-        bottomSection.classList.add('bottomSection');
-        bottomSection.appendChild(mediaPreviewContainer);
-
         let rightSection = document.createElement('span');
         rightSection.classList.add('rightSection');
         rightSection.appendChild(topSection);
         rightSection.appendChild(middleSection);
-        rightSection.appendChild(bottomSection);
 
-        let tweetContainer = document.createElement('div');
+        let tweetContainer = document.createElement('button');
         tweetContainer.classList.add('tweet');
         tweetContainer.appendChild(leftSection);
         tweetContainer.appendChild(rightSection);
@@ -104,11 +72,49 @@ function setTweets(tweets) {
     pageBody.appendChild(tweetList);
 }
 
+// .replace(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, url => {
+//             return `<a href="https://${url}">${url}</a>`;
+//         }).replace(/@\w+/g, handle => {
+//             return `<a href="https://twitter.com/${handle.replace('@', '')}">${handle}</a>`;
+//         }).replace(/#\w+/g, hashtag => {
+//             return `<a href="https://twitter.com/hashtag/${hashtag.replace('#', '')}">${hashtag}</a>`;
+//         })}`
+
+// let mediaPreviewContainer;
+// if(tweet.photoUrl !== undefined) {
+//     //TODO: Surround image in button, focus styling remove height limit and transition to full.
+//     mediaPreviewContainer = document.createElement('img');
+//     mediaPreviewContainer.classList.add('mediaPreview');
+//     mediaPreviewContainer.setAttribute('loading', 'lazy');
+//     mediaPreviewContainer.src = tweet.photoUrl;
+// }
+
+// if(tweet.videoUrl !== undefined) {
+//     let videoSource = document.createElement('source');
+//     videoSource.src = tweet.videoUrl;
+//     videoSource.type = 'video/mp4';
+
+//     mediaPreviewContainer = document.createElement('video');
+//     mediaPreviewContainer.classList.add('mediaPreview');
+//     mediaPreviewContainer.setAttribute('controls', true);
+//     mediaPreviewContainer.setAttribute('loop', true);
+//     mediaPreviewContainer.appendChild(videoSource);
+// }
+
+// let bottomSection = document.createElement('div');
+// bottomSection.classList.add('bottomSection');
+// bottomSection.appendChild(mediaPreviewContainer);
+
 var onLoad = () => {
     pageBody = document.querySelector('body');
 
+    let headerImageContainer = document.createElement('img');
+    headerImageContainer.classList.add('headerImage');
+    headerImageContainer.src = 'images/Header.png';
+
     let headerContainer = document.createElement('div');
     headerContainer.classList.add('header');
+    headerContainer.appendChild(headerImageContainer);
     pageBody.appendChild(headerContainer);
 
     setTweets([

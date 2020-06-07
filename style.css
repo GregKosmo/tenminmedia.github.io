@@ -33,9 +33,28 @@ body {
     border-width: 0 0 1px 0;
 }
 
+.tweet:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.tweet:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+}
+
 .tweet {
     display: flex;
     padding: 12px;
+    background: white;
+    text-align: unset;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #242424;
+    outline: none;
+    cursor: pointer;
 }
 
 .tweet .profilePicture {
@@ -49,7 +68,7 @@ body {
     padding-right: 8px;
 }
 
-.tweet .handle a {
+.tweet .handle {
     color: #c4c4c4;
     font-size: 12px;
     text-decoration: none;
@@ -97,6 +116,12 @@ body {
     border-color: #2c6083;
     box-sizing: border-box;
     z-index: 3;
+    display: flex;
+    justify-content: space-around;
+}
+
+.headerImage {
+    height: 100%;
 }
 
 .footer {
