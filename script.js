@@ -12,14 +12,11 @@ class Tweet {
     date;
 }
 
-var pageBody;
-
 /**
  * @param {Tweet[]} tweets 
  */
 function setTweets(tweets) {
-    let tweetList = document.createElement('div');
-    tweetList.classList.add('tweetList');
+    let tweetList = document.querySelector('.tweetList');
 
     for(let tweet of tweets.filter(possiblyBlankTweet => possiblyBlankTweet.episode !== 0)) {
         let profilePictureContainer = document.createElement('img');
@@ -68,8 +65,6 @@ function setTweets(tweets) {
 
         tweetList.appendChild(tweetContainer);
     }
-
-    pageBody.appendChild(tweetList);
 }
 
 // .replace(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g, url => {
@@ -106,17 +101,6 @@ function setTweets(tweets) {
 // bottomSection.appendChild(mediaPreviewContainer);
 
 var onLoad = () => {
-    pageBody = document.querySelector('body');
-
-    let headerImageContainer = document.createElement('img');
-    headerImageContainer.classList.add('headerImage');
-    headerImageContainer.src = 'images/Header.png';
-
-    let headerContainer = document.createElement('div');
-    headerContainer.classList.add('header');
-    headerContainer.appendChild(headerImageContainer);
-    pageBody.appendChild(headerContainer);
-
     setTweets([
         {
             date: new Date(`2/22/2012`),
@@ -3579,8 +3563,4 @@ var onLoad = () => {
             tweetUrl: ``
         },
     ])
-
-    let footerContainer = document.createElement('div');
-    footerContainer.classList.add('footer');
-    pageBody.appendChild(footerContainer);
 }
